@@ -6,6 +6,9 @@ class UsersController < ApplicationController
   
   def index
     @users = User.where(activated: true).paginate(page: params[:page])
+    @latest_micropost = @users.each do |user|
+                          user.microposts.first
+                        end
   end
   
   def show
