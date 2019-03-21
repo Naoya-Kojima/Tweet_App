@@ -1,0 +1,148 @@
+have_func: checking for mysql_ssl_set()... -------------------- yes
+
+"clang -o conftest -I/Users/kojimanaoya/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin18 -I/Users/kojimanaoya/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/kojimanaoya/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/Users/kojimanaoya/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -I/usr/local/opt/mysql@5.7/include/mysql   -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/kojimanaoya/.rbenv/versions/2.5.1/lib -L. -L/Users/kojimanaoya/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -L/usr/local/opt/mysql@5.7/lib -lmysqlclient -lssl -lcrypto  -lruby.2.5.1-static -framework Foundation  -lpthread -ldl -lobjc "
+ld: warning: text-based stub file /System/Library/Frameworks//Foundation.framework/Foundation.tbd and library file /System/Library/Frameworks//Foundation.framework/Foundation are out of sync. Falling back to library file for linking.
+ld: warning: text-based stub file /System/Library/Frameworks//CoreFoundation.framework/Versions/A/CoreFoundation.tbd and library file /System/Library/Frameworks//CoreFoundation.framework/Versions/A/CoreFoundation are out of sync. Falling back to library file for linking.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"clang -o conftest -I/Users/kojimanaoya/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin18 -I/Users/kojimanaoya/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/kojimanaoya/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/Users/kojimanaoya/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -I/usr/local/opt/mysql@5.7/include/mysql   -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/kojimanaoya/.rbenv/versions/2.5.1/lib -L. -L/Users/kojimanaoya/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -L/usr/local/opt/mysql@5.7/lib -lmysqlclient -lssl -lcrypto  -lruby.2.5.1-static -framework Foundation -L/usr/local/opt/mysql@5.7/lib -lmysqlclient -lssl -lcrypto  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'mysql_ssl_set'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_ssl_set; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))mysql_ssl_set; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/kojimanaoya/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin18 -I/Users/kojimanaoya/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/kojimanaoya/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/Users/kojimanaoya/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -I/usr/local/opt/mysql@5.7/include/mysql   -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/kojimanaoya/.rbenv/versions/2.5.1/lib -L. -L/Users/kojimanaoya/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -L/usr/local/opt/mysql@5.7/lib -lmysqlclient -lssl -lcrypto  -lruby.2.5.1-static -framework Foundation -L/usr/local/opt/mysql@5.7/lib -lmysqlclient -lssl -lcrypto  -lpthread -ldl -lobjc "
+ld: warning: text-based stub file /System/Library/Frameworks//Foundation.framework/Foundation.tbd and library file /System/Library/Frameworks//Foundation.framework/Foundation are out of sync. Falling back to library file for linking.
+ld: warning: text-based stub file /System/Library/Frameworks//CoreFoundation.framework/Versions/A/CoreFoundation.tbd and library file /System/Library/Frameworks//CoreFoundation.framework/Versions/A/CoreFoundation are out of sync. Falling back to library file for linking.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void mysql_ssl_set();
+14: int t(void) { mysql_ssl_set(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_str_set_len()... -------------------- yes
+
+"clang -o conftest -I/Users/kojimanaoya/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin18 -I/Users/kojimanaoya/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/kojimanaoya/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/Users/kojimanaoya/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -I/usr/local/opt/mysql@5.7/include/mysql   -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/kojimanaoya/.rbenv/versions/2.5.1/lib -L. -L/Users/kojimanaoya/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -L/usr/local/opt/mysql@5.7/lib -lmysqlclient -lssl -lcrypto  -lruby.2.5.1-static -framework Foundation -L/usr/local/opt/mysql@5.7/lib -lmysqlclient -lssl -lcrypto  -lpthread -ldl -lobjc "
+ld: warning: text-based stub file /System/Library/Frameworks//Foundation.framework/Foundation.tbd and library file /System/Library/Frameworks//Foundation.framework/Foundation are out of sync. Falling back to library file for linking.
+ld: warning: text-based stub file /System/Library/Frameworks//CoreFoundation.framework/Versions/A/CoreFoundation.tbd and library file /System/Library/Frameworks//CoreFoundation.framework/Versions/A/CoreFoundation are out of sync. Falling back to library file for linking.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_str_set_len; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_thread_start_timer()... -------------------- no
+
+"clang -o conftest -I/Users/kojimanaoya/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin18 -I/Users/kojimanaoya/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/kojimanaoya/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/Users/kojimanaoya/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -I/usr/local/opt/mysql@5.7/include/mysql   -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/kojimanaoya/.rbenv/versions/2.5.1/lib -L. -L/Users/kojimanaoya/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -L/usr/local/opt/mysql@5.7/lib -lmysqlclient -lssl -lcrypto  -lruby.2.5.1-static -framework Foundation -L/usr/local/opt/mysql@5.7/lib -lmysqlclient -lssl -lcrypto  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'rb_thread_start_timer'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_start_timer; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_start_timer; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/kojimanaoya/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin18 -I/Users/kojimanaoya/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/kojimanaoya/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/Users/kojimanaoya/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -I/usr/local/opt/mysql@5.7/include/mysql   -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/kojimanaoya/.rbenv/versions/2.5.1/lib -L. -L/Users/kojimanaoya/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -L/usr/local/opt/mysql@5.7/lib -lmysqlclient -lssl -lcrypto  -lruby.2.5.1-static -framework Foundation -L/usr/local/opt/mysql@5.7/lib -lmysqlclient -lssl -lcrypto  -lpthread -ldl -lobjc "
+ld: warning: text-based stub file /System/Library/Frameworks//Foundation.framework/Foundation.tbd and library file /System/Library/Frameworks//Foundation.framework/Foundation are out of sync. Falling back to library file for linking.
+ld: warning: text-based stub file /System/Library/Frameworks//CoreFoundation.framework/Versions/A/CoreFoundation.tbd and library file /System/Library/Frameworks//CoreFoundation.framework/Versions/A/CoreFoundation are out of sync. Falling back to library file for linking.
+Undefined symbols for architecture x86_64:
+  "_rb_thread_start_timer", referenced from:
+      _t in conftest-9ed39b.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void rb_thread_start_timer();
+14: int t(void) { rb_thread_start_timer(); return 0; }
+/* end */
+
+--------------------
+
+have_header: checking for mysql.h... -------------------- yes
+
+"clang -E -I/Users/kojimanaoya/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin18 -I/Users/kojimanaoya/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/kojimanaoya/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/Users/kojimanaoya/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -I/usr/local/opt/mysql@5.7/include/mysql   -O3 -Wno-error=shorten-64-to-32  -pipe  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <mysql.h>
+/* end */
+
+--------------------
+
