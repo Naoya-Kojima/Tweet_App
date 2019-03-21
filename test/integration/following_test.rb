@@ -1,11 +1,11 @@
 require 'test_helper'
 
 class FollowingTest < ActionDispatch::IntegrationTest
-   def setup
+  def setup
     @user = users(:michael)
     @other = users(:archer)
     log_in_as(@user)
-   end
+  end
 
   test "following page" do
     get following_user_path(@user)
@@ -24,7 +24,7 @@ class FollowingTest < ActionDispatch::IntegrationTest
       assert_select "a[href=?]", user_path(user)
     end
   end
-  
+
   test "should follow a user the standard way" do
     assert_difference '@user.following.count', 1 do
       post relationships_path, params: { followed_id: @other.id }

@@ -36,7 +36,7 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller"
   gem 'capybara'
-
+  gem 'heavens_door'
 end
 
 group :test do
